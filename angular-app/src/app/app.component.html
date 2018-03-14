@@ -2,31 +2,62 @@
  
     @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
-.active {
-  /* color:white;   */
-}
 
-.active a {
-  color:red;
-}
+
 .nav-item{
   margin-left:2rem !important;
 margin-right:2rem !important;  
   display:inline;
-  /* color:white; */
+  color:white;
 }
 .nav-item a:hover {
-  /* color: rgb(54, 143, 143); */
+  color: rgb(54, 143, 143);
 }
 
 .navbar{
   background-color:#283a64;
-  /* color:rgb(182, 126, 126); */
 }
 
-.navbar-light, .navbar-nav, .navbar-link{
+.nav-item a{
+  color:white;
 
 }
+
+.nav-styles {
+	background-color: #1a1b22;
+}
+
+.nav-styles a {
+	color: white;
+}
+
+.nav-styles a:hover {
+	color: #c9c9c9;
+}
+
+.nav-link.active {
+	color: #e64758 !important;
+}
+
+.dropdown-links a {
+	color: #1a1b22;
+}
+
+.dropdown-links a:hover {
+	color: #252830;
+}
+.faux-btn span{
+  color: rgba(0, 255, 255, 0.836);
+ 
+}
+.faux-btn {
+  border: 1px solid rgba(0, 255, 255, 0.836);
+  background-color: #293B62;
+
+  border-radius: 5px;
+  padding: .5em 1em .5em 1em;
+}
+
 
 </style>
 <div class="Container">
@@ -37,13 +68,15 @@ margin-right:2rem !important;
           <li class="nav-item"><a class="nav-link" [routerLink]="['home']" routerLinkActive="active">Home</a></li>
           <li class="nav-item"><a class="nav-link" [routerLink]="['documents']" routerLinkActive="active">Documents</a></li>
           <li class="nav-item dropdown">
+            <span class="faux-btn">
               <div ngbDropdown class="d-inline-block dropdown-links nav-link" ngbDropdownToggle>
-                      Proposals
+                      <span>Proposals</span>
                   <div class="dropdown-menu">
                     <a class="dropdown-item" [routerLink]="['proposals']" routerLinkActive="active">Proposal</a>
                     <a class="dropdown-item" [routerLink]="['create']" routerLinkActive="active" routerLinkActiveOptions="{ exact: true }">New Proposal</a>
                   </div>
               </div>
+            </span>
               </li>
       </ul>
     </div>

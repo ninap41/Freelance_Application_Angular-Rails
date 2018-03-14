@@ -66,17 +66,18 @@ h1{
   <div class="row">
   <ul align="center"  *ngFor="let prop of proposals" class="list-group-item list-group-item-action narrow col">
     <ol style="list-style-type: none" class="list-group"> <BR> 
-      <a align="center"routerLink="/proposals/{{prop.id}}" class="proposal-link">
+      <a (click)="gotoShow(proposal)" align="center"routerLink="/proposals/{{prop.id}}" class="proposal-link">
       <h5 align="center"class="list-group-item-heading">{{ prop.customer }}</h5><BR> 
       <p align="center"class="list-group-item-text" >
-        <!-- <b>Portfolio: </b>  {{ prop.portfolio_url }} <BR> 
-     <b>Tools: </b>  {{ prop.tools }}<BR> 
-      <b>Estimated Hours: </b>  {{ prop.estimated_hours }} hours <BR> 
-      <b>Rate: </b>  ${{ prop.hourly_rate }}/hour <BR>  
-      <b>Contact: </b>  {{ prop.client_email }} -->
+          <span class="card-text"> <small class="text-muted"> {{prop.updated_at | date}}</small></span><BR>
+
       <b>Proposal Price: </b>  ${{ prop.estimated_hours * prop.hourly_rate }}</p>
+
     </a>
+    <button type="button" (click)="delete(prop)">Delete</button>
+
     </ol>
+
   </ul>
 </div>
 </div>

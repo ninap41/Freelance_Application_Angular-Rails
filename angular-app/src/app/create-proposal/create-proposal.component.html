@@ -39,7 +39,7 @@
       padding: 2rem;
     }
     .butt {
-      min-width: 100px;
+      min-width: 160px;
       
     }
   
@@ -52,7 +52,7 @@
           <h2>
               Create Proposal
           </h2>
-              <form (submit)="onSubmit()" align="center" #proposalForm="ngForm">
+              <form (ngSubmit)="createProposal(proposal)" align="center" #proposalForm="ngForm">
                 <div class="form-group" align="center">
                   <label for="customer">Customer Name</label>
                   <input type="text"
@@ -153,8 +153,12 @@
 
                       <div align="center" class="container">
                           <div class="container">
-                            <button class="butt col-4" *ngIf='!proposalForm.valid' type="submit" value="Create">Create</button>
-                            <button class=" butt col-4" *ngIf='proposalForm.valid' type="submit" value="Create">Create</button>
+                            <button class="butt col-4 btn-outline-primary" 
+                            [hidden]="submitted" 
+                            [disabled]="!proposalForm.valid" 
+                            type="submit" 
+                            value="Create"
+                            >Create Proposal</button>
                           </div>
                       </div>
               </form>
