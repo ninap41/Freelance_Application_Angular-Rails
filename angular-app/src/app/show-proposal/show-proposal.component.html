@@ -1,0 +1,39 @@
+
+<style>
+
+    .Container {
+       background: 
+    linear-gradient(
+      rgba(0, 30, 54, 0.45), 
+      rgba(0, 35, 68, 0.45)
+    ),
+    url('https://writersedit.com/wp-content/uploads/2017/09/pitching-freelance-articles-3.jpeg');
+    background-size: cover;
+      min-height: 755px;
+      width: 100%;
+      padding: 4rem;
+    }
+    .card{
+      padding:30px;
+
+    }
+    
+
+</style>
+
+  <div class="Container">
+    <div class="container">
+      <div class="card">
+        <div class="container">
+          <h1>{{ proposal.customer }}</h1>
+            <p>
+                Will work for ${{ proposal.hourly_rate }}/hour.
+              </p>
+              <p>
+                Can complete Project in Under {{ proposal.estimated_hours }} hours.
+              </p>
+        </div>
+        
+      </div>
+    </div>
+  </div>

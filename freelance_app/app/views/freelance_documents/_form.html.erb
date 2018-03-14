@@ -1,0 +1,37 @@
+<%= form_with(model: freelance_document, local: true) do |form| %>
+  <% if freelance_document.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(freelance_document.errors.count, "error") %> prohibited this freelance_document from being saved:</h2>
+
+      <ul>
+      <% freelance_document.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :freelance_document_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :freelance_document_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :file_url %>
+    <%= form.text_area :file_url, id: :freelance_document_file_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image_url %>
+    <%= form.text_area :image_url, id: :freelance_document_image_url %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

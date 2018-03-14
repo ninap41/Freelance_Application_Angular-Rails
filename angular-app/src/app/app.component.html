@@ -1,0 +1,57 @@
+<style>
+ 
+    @import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+.active {
+  /* color:white;   */
+}
+
+.active a {
+  color:red;
+}
+.nav-item{
+  margin-left:2rem !important;
+margin-right:2rem !important;  
+  display:inline;
+  /* color:white; */
+}
+.nav-item a:hover {
+  /* color: rgb(54, 143, 143); */
+}
+
+.navbar{
+  background-color:#283a64;
+  /* color:rgb(182, 126, 126); */
+}
+
+.navbar-light, .navbar-nav, .navbar-link{
+
+}
+
+</style>
+<div class="Container">
+
+  <nav  class="navbar navbar-toggleable-sm navbar-fixed-top navbar-light bg-faded">
+    <div class="container">
+      <ul class="nav navbar-nav">
+          <li class="nav-item"><a class="nav-link" [routerLink]="['home']" routerLinkActive="active">Home</a></li>
+          <li class="nav-item"><a class="nav-link" [routerLink]="['documents']" routerLinkActive="active">Documents</a></li>
+          <li class="nav-item dropdown">
+              <div ngbDropdown class="d-inline-block dropdown-links nav-link" ngbDropdownToggle>
+                      Proposals
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" [routerLink]="['proposals']" routerLinkActive="active">Proposal</a>
+                    <a class="dropdown-item" [routerLink]="['create']" routerLinkActive="active" routerLinkActiveOptions="{ exact: true }">New Proposal</a>
+                  </div>
+              </div>
+              </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="Main Col-4">
+    
+  <router-outlet></router-outlet>
+  </div>
+</div>
+
+
